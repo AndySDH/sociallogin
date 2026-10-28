@@ -13,6 +13,7 @@ defined('_JEXEC') || die;
 use Akeeba\Plugin\System\SocialLogin\Features\Ajax;
 use Akeeba\Plugin\System\SocialLogin\Features\ButtonInjection;
 use Akeeba\Plugin\System\SocialLogin\Features\DynamicUsergroups;
+use Akeeba\Plugin\System\SocialLogin\Features\RegistrationButtons;
 use Akeeba\Plugin\System\SocialLogin\Features\UserFields;
 use Akeeba\Plugin\System\SocialLogin\Library\Plugin\AddLoggerTrait;
 use Akeeba\Plugin\System\SocialLogin\Library\Plugin\EventResultTrait;
@@ -38,6 +39,7 @@ class SocialLogin extends CMSPlugin implements SubscriberInterface, DatabaseAwar
 		DynamicUsergroups::onAfterInitialise as protected onAfterInitialise_DynamicUserGroups;
 	}
 	use ButtonInjection;
+	use RegistrationButtons;
 	use UserFields;
 	use AddLoggerTrait;
 	use SocialLoginButtonsTrait;
@@ -69,6 +71,13 @@ class SocialLogin extends CMSPlugin implements SubscriberInterface, DatabaseAwar
 	private bool $addLinkUnlinkButtons = true;
 
 	/**
+	 * Should I add the social login buttons to the user registration page of com_users?
+	 *
+	 * @var   bool
+	 */
+	private bool $addRegistrationButtons = false;
+
+	/**
 	 * Are the substitutions enabled?
 	 *
 	 * @var   bool
@@ -81,6 +90,7 @@ class SocialLogin extends CMSPlugin implements SubscriberInterface, DatabaseAwar
 			'onAfterInitialise'    => 'onAfterInitialise',
 			'onAjaxSociallogin'    => 'onAjaxSociallogin',
 			'onUserLoginButtons'   => 'onUserLoginButtons',
+			'onAfterDispatch'      => 'onAfterDispatch',
 			'onContentPrepareData' => 'onContentPrepareData',
 			'onContentPrepareForm' => 'onContentPrepareForm',
 			'onUserAfterSave'      => 'onUserAfterSave',
@@ -119,7 +129,8 @@ class SocialLogin extends CMSPlugin implements SubscriberInterface, DatabaseAwar
 		$this->loadLanguage();
 
 		// Load the other plugin parameters
-		$this->addLinkUnlinkButtons = $this->params->get('linkunlinkbuttons', 1);
+		$this->addLinkUnlinkButtons   = $this->params->get('linkunlinkbuttons', 1);
+		$this->addRegistrationButtons = (bool) $this->params->get('registration_buttons', 0);
 		$this->linkedUserGroup      = (int) $this->params->get('linkedAccountUserGroup', 0);
 		$this->unlinkedUserGroup    = (int) $this->params->get('noLinkedAccountUserGroup', 0);
 	}

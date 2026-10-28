@@ -46,3 +46,4 @@
 | Non-linked | Non collegato | adjective |
 | Copy to Clipboard | Copia negli Appunti | action phrase |
 | Single Sign-On | Single Sign-On | kept as SSO acronym |
+| Register | Registrati | imperative verb (sign up) |

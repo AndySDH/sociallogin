@@ -60,3 +60,4 @@
 | Well-known URL | URL de configuration | noun (OIDC discovery endpoint) |
 | Application type | Type d'application | noun |
 | Tenant | Locataire | noun (Azure terminology) |
+| Register | S'inscrire | verb (sign up) |

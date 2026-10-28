@@ -88,6 +88,18 @@
 					<option value="1">JYES</option>
 				</field>
 
+				<field
+						name="registration_buttons"
+						type="radio"
+						layout="joomla.form.field.radio.switcher"
+						label="PLG_SYSTEM_SOCIALLOGIN_CONFIG_REGISTRATIONBUTTONS_LABEL"
+						description="PLG_SYSTEM_SOCIALLOGIN_CONFIG_REGISTRATIONBUTTONS_DESC"
+						default="0"
+				>
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+
 				<field name="linkedAccountUserGroup"
                        type="usergrouplist"
 					   checksuperusergroup="1"

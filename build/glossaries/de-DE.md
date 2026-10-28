@@ -51,3 +51,4 @@
 | Review | Überprüfung | admin review of new account |
 | Notification | Benachrichtigung | |
 | Remind | Erinnern | |
+| Register | Registrieren | verb (sign up) |

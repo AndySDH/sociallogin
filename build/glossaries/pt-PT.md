@@ -49,3 +49,4 @@
 | Review | Rever | verb |
 | Confirmation | Confirmação | noun |
 | Instructions | Instruções | noun |
+| Register | Registar-se | verb (sign up) |

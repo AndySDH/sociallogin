@@ -51,3 +51,4 @@
 | Copy to Clipboard | Αντιγραφή στο Πρόχειρο | action |
 | Create | Δημιουργία | create action |
 | Single Sign-On | Single Sign-On | kept as SSO (technical term) |
+| Register | Εγγραφείτε | verb (sign up) |

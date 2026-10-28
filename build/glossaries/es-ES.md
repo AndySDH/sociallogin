@@ -51,3 +51,4 @@
 | Application | Aplicación | |
 | Domain | Dominio | |
 | Tenant | Inquilino | Azure AD term |
+| Register | Registrarse | verb (sign up) |
