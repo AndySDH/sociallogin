@@ -28,6 +28,7 @@ Akeeba SocialLogin 4.11.1
 # [LOW] German and Italian language files: fixed unescaped double quotes that broke strict INI parsing
 # [LOW] Debug-mode OAuth error details no longer show literal HTML tags
 # [LOW] The "Backend only" choice of the Enabled Applications option could not be saved in any social login plugin [gh-150]
+# [LOW] The Google logo could render as plain coloured squares when another copy of it, or another element with the same id, appeared earlier on the page
 
 Akeeba SocialLogin 4.11.0
 ================================================================================

@@ -8,6 +8,7 @@
 // Protect from unauthorized access
 defined('_JEXEC') || die();
 
+use Akeeba\Plugin\System\SocialLogin\Library\Helper\InlineSvg;
 use Joomla\CMS\HTML\HTMLHelper;
 use Joomla\CMS\Layout\FileLayout;
 use Joomla\CMS\Uri\Uri;
@@ -57,7 +58,7 @@ if (empty($icon) && substr($rawimage, -4) === '.svg')
 {
 	$image = HTMLHelper::_('image', $rawimage, '', '', true, true);
 	$image = $image ? JPATH_ROOT . substr($image, \strlen(Uri::root(true))) : '';
-	$img   = file_get_contents($image);
+	$img   = InlineSvg::withUniqueIds((string) file_get_contents($image));
 }
 
 // Start writing your template override code below this line

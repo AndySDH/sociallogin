@@ -10,6 +10,7 @@ namespace Akeeba\Plugin\System\SocialLogin\Features;
 // Prevent direct access
 defined('_JEXEC') || die;
 
+use Akeeba\Plugin\System\SocialLogin\Library\Helper\InlineSvg;
 use Exception;
 use Joomla\CMS\Document\HtmlDocument;
 use Joomla\CMS\Factory;
@@ -86,7 +87,7 @@ trait ButtonInjection
 				$imageKey     = 'svg';
 				$image        = HTMLHelper::_('image', $def['rawimage'], '', '', true, true);
 				$image        = $image ? JPATH_ROOT . substr($image, strlen(Uri::root(true))) : '';
-				$imageContent = file_get_contents($image);
+				$imageContent = InlineSvg::withUniqueIds((string) file_get_contents($image));
 			}
 
 			if (empty($def['rawimage']))
